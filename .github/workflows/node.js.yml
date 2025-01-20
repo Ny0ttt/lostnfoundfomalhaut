@@ -13,7 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    defaults: 
+      run: 
+        working-directory: ./express
     strategy:
       matrix:
         node-version: [18.x, 22.x]
@@ -28,6 +30,6 @@ jobs:
         cache: 'npm'
     - name: List files in the express directory 
       run: ls -la .
-    - run: cd express && npm ci
-    - run: cd express && npm run build --if-present
+    - run: npm ci
+    - run: npm run build --if-present
 #    - run: cd express && npm test

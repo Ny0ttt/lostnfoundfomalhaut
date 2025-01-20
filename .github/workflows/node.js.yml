@@ -26,6 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd lostndoundfomalhaut/express && npm ci
-    - run: cd lostndoundfomalhaut/express && npm run build --if-present
-    - run: cd lostndoundfomalhaut/express && npm test
+    - run: cd lostnfoundfomalhaut/express && npm ci
+    - run: cd lostnfoundfomalhaut/express && npm run build --if-present
+    - run: cd lostnfoundfomalhaut/express && npm test

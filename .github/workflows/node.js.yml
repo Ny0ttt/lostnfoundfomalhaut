@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: List files in the express directory 
-      run: ls -la ./lostnfoundfomalhaut/express
+      run: ls -la .
     - run: cd lostnfoundfomalhaut/express && npm ci
     - run: cd lostnfoundfomalhaut/express && npm run build --if-present
     - run: cd lostnfoundfomalhaut/express && npm test

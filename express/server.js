@@ -6,20 +6,31 @@ import { fileURLToPath } from 'url';
 // const express = require('express')
 const app = express()
 
-const storage = multer.memoryStorage()
-const upload = multer({ storage: storage })
+// const storage = multer.memoryStorage()
+// const upload = multer({ storage: storage })
 
 const __filename = fileURLToPath(import.meta.url); 
 const __dirname = path.dirname(__filename);
 
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, path.join(__dirname, '../public/uploads/'))
+    },
+    filename: function (req,file, cb) {
+        cb(null, file.originalname);
+    }
+})
 var uploading = multer({
     // dest: __dirname + '../public/uploads/',
     // limits: {fileSize: 1000000, files:1},
-    dest: path.join(__dirname, '../public/uploads/'), 
+    // dest: path.join(__dirname, '../public/uploads/'), 
+    // limits: { fileSize: 1000000, files: 1},
+    storage: storage,
     limits: { fileSize: 1000000, files: 1},
+    
   })
 
-upload.single('avatar')
+// upload.single('avatar')
 
 app.get("/api", (req, res) => {
 
@@ -27,13 +38,13 @@ app.get("/api", (req, res) => {
 
 })
 
-app.post("/api/posts", upload.single('image'), async (req, res) => {
+// app.post("/api/posts", upload.single('image'), async (req, res) => {
 
-    console.log("req.boy", req.body)
-    console.log("req.file", req.file)
-    res.send({})
+//     console.log("req.boy", req.body)
+//     console.log("req.file", req.file)
+//     res.send({})
 
-})
+// })
 
 app.post('/pictures/upload', uploading.single('image'), function(req, res) {
     res.send('File uploaded successfully');

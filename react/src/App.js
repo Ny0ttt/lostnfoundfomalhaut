@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import UploadFile from './UploadFile';
+import UploadFile from './UploadFile.js';
 
 
-import React, {useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react';
 
 
 function App() {
 
-  const [backendData, setBackendData] = useState ([{}])
+  const [backendData, setBackendData] = useState ([{}]);
 
   useEffect(() =>{
-    fetch("/api").then(
+    fetch('/api').then(
       response => response.json()
 
     ).then(
       data => {
-        setBackendData(data)
+        setBackendData(data);
       }
-    )
-  }, []) // [] after the component to run only on the first render of the component
+    );
+  }, []); // [] after the component to run only on the first render of the component
   
 
   return ( 

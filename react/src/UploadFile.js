@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { Component } from "react";
+// import axios from "axios";
 
 class UploadFile extends Component {
     state = {
@@ -32,7 +32,9 @@ class UploadFile extends Component {
 
         // Request made to the backend api
         // Send formData object
-        axios.post("api/posts", formData);
+        // axios.post("api/posts", formData);
+
+        fetch("api/posts", { method: "POST", body: formData, }) .then(response => response.json()) .then(data => { console.log(data); }) .catch(error => { console.error("Error:", error); });
     };
 
     // File content to be displayed after

@@ -1,3 +1,6 @@
+getting started. do npm install first to get nodemodules xd
+
+
 ### run backend server with ['npm run dev'](command)
 ### run frontend react server with ['npm start'](command)
 ### run eslint in /react with ['npx eslint src/'](command) make sure to be in the right directory

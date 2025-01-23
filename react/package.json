@@ -48,5 +48,9 @@
     "eslint-plugin-react": "^7.37.4",
     "globals": "^15.14.0",
     "web-vitals": "^4.2.4"
+  },
+  "jest": {
+    "testMatch": ["<rootDir>/tests/**/*.test.js"]
   }
+  
 }

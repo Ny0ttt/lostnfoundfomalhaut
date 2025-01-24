@@ -25,3 +25,10 @@ yo does vercel connect with branch or repo? if branch, then we good to connect i
 
 
 # ALL WORKFLOW SHOULD BE ONLY IN DEV BRANCH #
+
+### as of 24 Jan 8am
+before proceeding with e2e playwright testing, we need to complete the ui of the system, with the initial data and files. 
+so the steps are as below :
+1. complete the system (ui, listing, tags)
+2. react unit testing
+3. e2e playwright testing
